@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public API Playground</title>
+    <meta name="description" content="A simple modern playground for exploring public APIs like Dog CEO, Official Joke, Random User, and JSONPlaceholder.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="toast-container" id="toast-container"></div>
+    
+    <header class="header">
+        <div class="header-content">
+            <h1>Public API Playground</h1>
+            <button id="theme-toggle" class="icon-button" aria-label="Toggle Dark Mode">
+                <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                <svg id="sun-icon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+            </button>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="grid">
+            <!-- Card 1: Dog Finder -->
+            <div class="card" id="card-dog">
+                <h2>Dog Finder</h2>
+                <div class="card-content" id="dog-content">
+                    <div class="empty-state">Click 'Get Dog' to fetch a random dog image!</div>
+                </div>
+                <div class="card-actions">
+                    <button id="btn-dog" class="btn btn-primary">Get Dog</button>
+                    <button id="btn-copy-dog" class="btn btn-secondary hidden" aria-label="Copy image URL">Copy URL</button>
+                </div>
+            </div>
+
+            <!-- Card 2: Joke Generator -->
+            <div class="card" id="card-joke">
+                <h2>Joke Generator</h2>
+                <div class="card-content" id="joke-content">
+                    <div class="empty-state">Need a laugh?</div>
+                </div>
+                <div class="card-actions">
+                    <button id="btn-joke" class="btn btn-primary">Get Joke</button>
+                </div>
+            </div>
+
+            <!-- Card 3: Random User Profile -->
+            <div class="card" id="card-user">
+                <h2>Random User Profile</h2>
+                <div class="card-content" id="user-content">
+                    <div class="empty-state">Fetch a random user profile!</div>
+                </div>
+                <div class="card-actions">
+                    <button id="btn-user" class="btn btn-primary">Get User</button>
+                </div>
+            </div>
+
+            <!-- Card 4: Posts Explorer -->
+            <div class="card" id="card-posts">
+                <h2>Posts Explorer</h2>
+                <div class="card-content" id="posts-content">
+                    <div class="empty-state">Load some mock posts!</div>
+                </div>
+                <div class="card-actions">
+                    <button id="btn-posts" class="btn btn-primary">Load Posts</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
