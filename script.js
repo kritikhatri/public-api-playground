@@ -182,7 +182,8 @@ async function fetchJoke() {
         btnJoke.disabled = true;
         jokeContent.innerHTML = getSpinnerHtml();
 
-        const response = await fetch('https://official-joke-api.appspot.com/random_joke');
+        // Using a more reliable API (JokeAPI v2) because official-joke is currently rate-limited (429)
+        const response = await fetch('https://v2.jokeapi.dev/joke/Any?type=twopart&safe-mode');
         if (!response.ok) throw new Error('Network error');
         
         const data = await response.json();
@@ -191,7 +192,7 @@ async function fetchJoke() {
         jokeContent.innerHTML = `
             <div class="fade-in" style="width: 100%">
                 <div class="joke-setup">${data.setup}</div>
-                <div class="joke-punchline">${data.punchline}</div>
+                <div class="joke-punchline">${data.delivery}</div>
             </div>
         `;
         
