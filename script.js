@@ -57,12 +57,11 @@ const themeToggleBtn = document.getElementById('theme-toggle');
 const sunIcon = document.getElementById('sun-icon');
 const moonIcon = document.getElementById('moon-icon');
 
-// Check for saved theme in localStorage, or rely on system preference
+// Check for saved theme in localStorage
 const savedTheme = localStorage.getItem('theme');
-const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-// Apply dark mode initially if needed
-if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+// Apply dark mode initially by default to show off the pink & black aesthetic
+if (savedTheme === 'dark' || !savedTheme) {
     document.documentElement.setAttribute('data-theme', 'dark');
     moonIcon.classList.add('hidden');
     sunIcon.classList.remove('hidden');
